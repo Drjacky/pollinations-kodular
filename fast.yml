@@ -1,0 +1,65 @@
+# Project version 7.3.0 08.10.26.20.07+13 Oct 26
+# The name of the extension developer.
+author: Drjacky
+
+# Define the minimum Android SDK API level your extension supports.
+min_sdk: 14
+
+# Select resolver tool between `gradle/maven` to fetch transitive dependencies.
+# resolver: gradle
+
+# Default repositories are Maven Central, Google Maven & Maven Local.
+# If the library you want to use is not available in these repositories,
+# add here by specifying their URLs. (premium)
+# repositories:
+# - https://jitpack.io/
+
+# Runtime dependencies [Remote and Local]
+# dependencies:
+# - groupId:artifactId:version (premium)
+# - aar-library.aar
+# - jar-library.jar
+
+# Compile-time dependencies [Remote and Local]
+# compile_time:
+# - groupId:artifactId:version (premium)
+# - aar-library.aar
+# - jar-library.jar
+
+# Define dependencies to skip during resolve. [Remote and Classes] (premium)
+# excludes:
+# - groupId:artifactId:version
+# - com.example.test.**
+
+# Define AAR libraries to attach with extension. [Remote and Local] (premium)
+# aars:
+# - groupId:artifactId:version
+# - aar-library.aar
+
+# Extension assets. [Should be present in assets directory]
+# assets:
+# - my-awesome-asset.anything
+
+# If enabled, extension will be optimized using R8.
+R8: true
+# If enabled, extension will be optimized using ProGuard.
+proguard: true
+# If enabled, the D8 tool will generate desugared jar (classes.dex)
+desugar_dex: true
+# Enable to write docs in Markdown during build. Pass `-b` to generate blocks.
+gen_docs: true
+# Enable to generate blocks with shadow blocks. (premium)
+shadow_blocks: false
+# Enable to increment the version number of each component during build.
+auto_version: false
+# Enable to remove @annotations from the extension.
+deannonate: true
+# Enable to skip matching classes provided by AI2.
+filter_mit_classes: false
+
+# Note: Features tagged as `premium` require a premium subscription.
+# To unlock these features and support the development of FAST-CLI,
+# please visit the link below to request access:
+# 🔗 https://buymeacoffee.com/jewelshkjony/extras/222302
+
+target_platform: kodular

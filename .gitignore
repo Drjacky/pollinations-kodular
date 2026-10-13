@@ -1,0 +1,6 @@
+build/
+.fast/
+out/
+.DS_Store
+.idea/
+.vscode/

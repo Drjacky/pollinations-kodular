@@ -1,0 +1,41 @@
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: temurin
+
+      - name: Unit tests (local mock server, no network)
+        run: ./tools/test.sh
+
+      - name: Set up FAST-CLI 7.3.0
+        run: |
+          wget -q https://github.com/jewelshkjony/fast-cli/releases/download/v7.3.0/fast.zip
+          unzip -q fast.zip -d "$RUNNER_TEMP/fast"
+          rm fast.zip
+
+      - name: Build the Kodular extension
+        run: java -jar "$RUNNER_TEMP/fast/fast.jar" build
+
+      - name: Build the sample project
+        run: python3 tools/make_aia.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pollinations-kodular
+          path: |
+            out/*.aix
+            sample/PollinationsDemo.aia
